@@ -1,0 +1,10 @@
+name = "lean-metaprogramming"
+version = "0.1.0"
+defaultTargets = ["lean-metaprogramming"]
+
+[[lean_lib]]
+name = "LeanMetaprogramming"
+
+[[lean_exe]]
+name = "lean-metaprogramming"
+root = "Main"
