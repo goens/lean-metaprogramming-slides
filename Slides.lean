@@ -5,7 +5,7 @@ import LeanSlides
 #slides Intro /-!
 # Lean's Pipeline
 
-  -![Lean's Pipeline](https://goens.org/img/lean-architecture.png)
+  ![Lean's Pipeline](https://goens.org/img/lean-architecture.png)
 
 ## Today
   - Parser
