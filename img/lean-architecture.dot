@@ -1,0 +1,27 @@
+digraph CompilerComponents {
+    node [shape=rectangle, style=filled, fillcolor=white];
+    
+    // nodes
+    editor [label="editor"];
+    language_server [label="language server"];
+    parser [label="parser"];
+    macro_expansion [label="macro expansion"];
+    elaborator [label="elaborator"];
+    kernel [label="kernel"];
+    code_generator [label="code generator"];
+    pretty_printer [label="pretty printer"];
+    
+    // edges
+    editor -> language_server [dir=both];
+    language_server -> parser;
+    parser -> macro_expansion;
+    macro_expansion -> elaborator [dir=both];
+    elaborator -> kernel;
+    kernel -> code_generator;
+    pretty_printer -> language_server;
+    elaborator -> pretty_printer;
+    kernel -> pretty_printer;
+    
+    // Graph attributes for layout
+    graph [rankdir=LR];
+}
