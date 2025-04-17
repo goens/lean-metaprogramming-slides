@@ -13,16 +13,6 @@ import LeanSlides
   - Elaborator/Pretty printer
 
 # An Example
-```
-def foo (x : Nat) : Nat := x + 1
-```
-
-## Macro expands to:
-```
-def foo : Nat → Nat :=
-fun x => x + 1
-```
-# Elaboration
 
 ```
 def foo (x : Nat) : Nat := x + 1
@@ -37,10 +27,11 @@ fun (x : Nat) => HAdd.hAdd.{0, 0, 0} Nat Nat Nat (instHAdd.{0} Nat instAddNat) x
 
 def foo (x : Nat) : Nat := x + 1
 #print foo
+
 set_option pp.raw true in
 #print foo
 
-#slides CurryHoward /-!
+#slides ExtensibleFrontend /-!
 
 # Lean frontend is Extensible
   - Parser
@@ -212,7 +203,7 @@ syntax (name := printsyntax) "#printsyntax" term : command -- declare the syntax
 def printSyntax : CommandElab := fun stx => do -- declare and register the elaborator
   logInfo s!"The syntax is:\n {stx[1]}"
 
-#printsyntax (fun x : Nat => x + 1)
+#printsyntax fun x : Nat => x + 1
 
 #slides Turtles /-!
 # Turtles All the Way Down
